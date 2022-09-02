@@ -1,0 +1,22 @@
+spring:
+  profiles:
+    active: development
+---
+spring:
+  profiles: development
+  datasource:
+    url: jdbc:postgresql://localhost:5432/news_management
+    username: admin
+    password: admin
+  jpa:
+    show-sql: true
+  output:
+    ansi:
+      enabled: always
+server:
+  servlet:
+    context-path: /newsManagement
+---
+spring:
+  profiles: production
+
