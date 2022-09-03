@@ -4,19 +4,20 @@ spring:
 ---
 spring:
   profiles: development
-  datasource:
-    url: jdbc:postgresql://localhost:5432/news_management
-    username: admin
-    password: admin
+  h2:
+    console.enabled: true
   jpa:
+    hibernate:
+      ddl-auto: none
     show-sql: true
   output:
     ansi:
       enabled: always
-server:
-  servlet:
-    context-path: /newsManagement
 ---
 spring:
   profiles: production
+server:
+  servlet:
+    context-path: /newsManagement
+
 

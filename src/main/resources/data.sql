@@ -1,0 +1,17 @@
+CREATE TABLE news(
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    date TIMESTAMP NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    text VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE comments(
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    date TIMESTAMP NOT NULL,
+	text VARCHAR(255) NOT NULL,
+    username VARCHAR(32) NOT NULL,
+	id_news BIGINT,
+	CONSTRAINT fk_news FOREIGN KEY (id_news) REFERENCES news(id)
+);
+
+INSERT INTO news(date,title,text) VALUES('1997-09-30','News','Text')
