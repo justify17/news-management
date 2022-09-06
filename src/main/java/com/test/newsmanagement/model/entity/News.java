@@ -3,7 +3,7 @@ package com.test.newsmanagement.model.entity;
 import lombok.*;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +19,7 @@ public class News {
     private Long id;
 
     @Column
-    private LocalDateTime date;
+    private LocalDate date;
 
     @Column
     private String title;
@@ -27,20 +27,14 @@ public class News {
     @Column
     private String text;
 
-    @OneToMany(mappedBy = "news", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "news", cascade = CascadeType.ALL)
     private List<Comment> comments;
 
     {
-        date = LocalDateTime.now();
         comments = new ArrayList<>();
     }
 
-    public News(String title, String text) {
-        this.title = title;
-        this.text = text;
-    }
-
-    public News(LocalDateTime date, String title, String text) {
+    public News(LocalDate date, String title, String text) {
         this.date = date;
         this.title = title;
         this.text = text;

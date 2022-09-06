@@ -5,7 +5,8 @@ spring:
 spring:
   profiles: development
   h2:
-    console.enabled: true
+    console:
+      enabled: true
   jpa:
     hibernate:
       ddl-auto: none
@@ -16,8 +17,5 @@ spring:
 ---
 spring:
   profiles: production
-server:
-  servlet:
-    context-path: /newsManagement
 
 

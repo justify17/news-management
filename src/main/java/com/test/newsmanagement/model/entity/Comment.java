@@ -1,9 +1,10 @@
 package com.test.newsmanagement.model.entity;
 
-import lombok.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Data
 @NoArgsConstructor
@@ -15,7 +16,7 @@ public class Comment {
     private Long id;
 
     @Column
-    private LocalDateTime date;
+    private LocalDate date;
 
     @Column
     private String text;
@@ -27,17 +28,7 @@ public class Comment {
     @JoinColumn(name = "id_news")
     private News news;
 
-    {
-        date = LocalDateTime.now();
-    }
-
-    public Comment(String text, String username, News news) {
-        this.text = text;
-        this.username = username;
-        this.news = news;
-    }
-
-    public Comment(LocalDateTime date, String text, String username, News news) {
+    public Comment(LocalDate date, String text, String username, News news) {
         this.date = date;
         this.text = text;
         this.username = username;
