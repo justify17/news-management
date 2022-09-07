@@ -10,5 +10,7 @@ public interface NewsMapper {
     @Mapping(target = "comments", ignore = true)
     NewsDto newsToNewsDto(News news);
 
+    @Mapping(target = "date", ignore = true)
+    @Mapping(target = "comments", ignore = true)
     News newsDtoToNews(NewsDto newsDto);
 }

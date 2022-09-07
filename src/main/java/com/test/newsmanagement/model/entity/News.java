@@ -31,6 +31,7 @@ public class News {
     private List<Comment> comments;
 
     {
+        date = LocalDate.now();
         comments = new ArrayList<>();
     }
 

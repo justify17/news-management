@@ -28,6 +28,10 @@ public class Comment {
     @JoinColumn(name = "id_news")
     private News news;
 
+    {
+        date = LocalDate.now();
+    }
+
     public Comment(LocalDate date, String text, String username, News news) {
         this.date = date;
         this.text = text;

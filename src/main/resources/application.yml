@@ -14,8 +14,17 @@ spring:
   output:
     ansi:
       enabled: always
+logging:
+  level:
+    root: INFO
+    com.test.newsmanagement: DEBUG
 ---
 spring:
   profiles: production
-
-
+server:
+  servlet:
+    context-path: /newsManagement
+logging:
+  level:
+    root: INFO
+    com.test: DEBUG
