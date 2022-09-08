@@ -27,4 +27,4 @@ server:
 logging:
   level:
     root: INFO
-    com.test: DEBUG
+    com.test.newsmanagement: DEBUG
